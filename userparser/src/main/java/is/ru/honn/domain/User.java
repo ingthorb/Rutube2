@@ -7,13 +7,13 @@ import java.util.List;
 public class User {
 
 
-  int userId;
-  String firstName;
-  String lastName;
-  String email;
-  String displayName;
-  LocalDate birthDate;
-  List<Video> videos;
+  protected int userId;
+  protected String firstName;
+  protected String lastName;
+  protected String email;
+  protected String displayName;
+  protected  LocalDate birthDate;
+  protected  List<Video> videos;
 
   public User(int userId, String firstName, String lastName, String email, String displayName, String birthDate) {
     this.userId = userId;

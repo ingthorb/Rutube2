@@ -30,10 +30,10 @@ public class UserServiceStub implements UserService{
     {
         //For the tests
         int id = user.getUserId();
-        string firstn = user.getFirstName();
-        string lastn  = user.getLastName();
+        String firstn = user.getFirstName();
+        String lastn  = user.getLastName();
 
-        if(id || firstn || lastn == null)
+        if(id || firstn == null|| lastn == null)
         {
             throw new ServiceException();
         }

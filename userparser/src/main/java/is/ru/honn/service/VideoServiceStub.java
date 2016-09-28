@@ -65,11 +65,11 @@ public class VideoServiceStub implements VideoService{
      */
     public int addVideo(Video video, int userId) throws ServiceException {
 
-        string title = video.getTitle();
-        string src   = video.getSource();
+        String title = video.getTitle();
+        String src   = video.getSource();
 
         //Can't be null
-        if(title || src == null)
+        if(title == null || src == null)
         {
             throw new ServiceException();
         }

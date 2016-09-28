@@ -5,12 +5,12 @@ import java.util.List;
 
 public class Video {
 
-  int videoId;
-  String title;
-  String description;
-  String source;
-  String videoType;
-  List<String> tags;
+  protected int videoId;
+  protected String title;
+  protected  String description;
+  protected String source;
+  protected String videoType;
+  protected List<String> tags;
 
   public Video(int videoId, String title, String description, String source, String videoType, List<String> tags) {
     this.videoId = videoId;
