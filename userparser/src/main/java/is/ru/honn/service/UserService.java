@@ -13,4 +13,5 @@ public interface UserService
     List<User> users = new ArrayList<User>();
     int addUser(User user) throws is.ru.honn.service.ServiceException;
     List<User> getUsers();
+    User getUser(int userid);
 }

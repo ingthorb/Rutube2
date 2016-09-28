@@ -64,6 +64,16 @@ public class VideoServiceStub implements VideoService{
      * @throws ServiceException if the user isn't found
      */
     public int addVideo(Video video, int userId) throws ServiceException {
+
+        string title = video.getTitle();
+        string src   = video.getSource();
+
+        //Can't be null
+        if(title || src == null)
+        {
+            throw new ServiceException();
+        }
+
         for(int i = 0; i < users.size(); i++ )
         {
             User tempUser = users.get(i);

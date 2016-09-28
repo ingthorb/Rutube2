@@ -26,7 +26,26 @@ public class UserServiceStub implements UserService{
      * @return the user id if successful else throws exception
      * @throws ServiceException
      */
-    public int addUser(User user) throws ServiceException {
+    public int addUser(User user) throws ServiceException
+    {
+        //For the tests
+        int id = user.getUserId();
+        string firstn = user.getFirstName();
+        string lastn  = user.getLastName();
+
+        if(id || firstn || lastn == null)
+        {
+            throw new ServiceException();
+        }
+
+        //Checking if the user is already in the list
+        User tempuser = getUser(id);
+        if(tempuser != null)
+        {
+            //He exists
+            throw new ServiceException();
+        }
+
         try
         {
             users.add(user);
@@ -36,5 +55,24 @@ public class UserServiceStub implements UserService{
             throw new ServiceException();
         }
         return user.getUserId();
+    }
+
+    /**
+     * Function that returns a user if he exists
+     * else returns exception
+     * @param userid
+     * @return the user or exception
+     */
+    public User getUser(int userid)
+    {
+        for(int i = 0; i < users.size(); i++)
+        {
+            User tempuser = users.get(i)
+            if(id == tempuser.getUserId())
+            {
+                return tempuser;
+            }
+        }
+        return null;
     }
 }
