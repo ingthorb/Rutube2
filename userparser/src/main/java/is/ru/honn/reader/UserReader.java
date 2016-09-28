@@ -5,9 +5,12 @@ import is.ru.honn.domain.Video;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
+import is.ru.honn.reader.AbstractReader;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static is.ru.honn.reader.AbstractReader.getInt;
 
 public class UserReader {
 
@@ -59,30 +62,30 @@ public class UserReader {
     return users;
   }
 
-  /**
-   *
-   * @param jParent Json parent containing an integer field.
-   * @param name name of the integer field
-   * @return int value of the json int in the jParent object.
-   */
-  protected int getInt(JSONObject jParent, String name)
-  {
-    if(jParent == null)
-      return 0;
-    Long value = (Long)jParent.get(name);
-    if(value == null)
-      return 0;
-    return value.intValue();
-  }
-
-  public static void main(String args[]){
-
-    VideoReader videoReader = new VideoReader();
-    UserReader userReader = new UserReader(videoReader);
-    ClientRequest clientRequest = new ClientRequest();
-    String content = clientRequest.getRequest("http://mockaroo.com/f13b8200/download?count=1&key=e79a3650");
-    List<User> users = (List<User>)userReader.parse(content);
-
-  }
+//  /**
+//   *
+//   * @param jParent Json parent containing an integer field.
+//   * @param name name of the integer field
+//   * @return int value of the json int in the jParent object.
+//   */
+//  protected int getInt(JSONObject jParent, String name)
+//  {
+//    if(jParent == null)
+//      return 0;
+//    Long value = (Long)jParent.get(name);
+//    if(value == null)
+//      return 0;
+//    return value.intValue();
+//  }
+//
+//  public static void main(String args[]){
+//
+//    VideoReader videoReader = new VideoReader();
+//    UserReader userReader = new UserReader(videoReader);
+//    ClientRequest clientRequest = new ClientRequest();
+//    String content = clientRequest.getRequest("http://mockaroo.com/f13b8200/download?count=1&key=e79a3650");
+//    List<User> users = (List<User>)userReader.parse(content);
+//
+//  }
 
 }

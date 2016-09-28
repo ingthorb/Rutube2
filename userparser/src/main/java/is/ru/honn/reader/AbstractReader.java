@@ -15,7 +15,7 @@ public class AbstractReader {
      * @param name name of the integer field
      * @return int value of the json int in the jParent object.
      */
-    protected int getInt(JSONObject jParent, String name)
+    protected static int getInt(JSONObject jParent, String name)
     {
         if(jParent == null)
             return 0;
