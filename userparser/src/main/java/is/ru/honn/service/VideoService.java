@@ -13,6 +13,3 @@ public interface VideoService
     List<Video> getVideosbyUser(int userId);
     int addVideo(Video video, int userId) throws ServiceException;
 }
-
-
-//Ætti þetta ekki að vera í service pakkanum

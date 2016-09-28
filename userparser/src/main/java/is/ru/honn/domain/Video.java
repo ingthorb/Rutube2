@@ -21,6 +21,54 @@ public class Video {
     this.tags = tags;
   }
 
+  public int getVideoId() {
+    return videoId;
+  }
+
+  public void setVideoId(int videoId) {
+    this.videoId = videoId;
+  }
+
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public String getSource() {
+    return source;
+  }
+
+  public void setSource(String source) {
+    this.source = source;
+  }
+
+  public String getVideoType() {
+    return videoType;
+  }
+
+  public void setVideoType(String videoType) {
+    this.videoType = videoType;
+  }
+
+  public List<String> getTags() {
+    return tags;
+  }
+
+  public void setTags(List<String> tags) {
+    this.tags = tags;
+  }
+
   public void addTag(String tag){
     tags.add(tag);
   }
