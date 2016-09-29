@@ -65,13 +65,15 @@ public class VideoServiceStub implements VideoService{
      */
     public int addVideo(Video video, int userId) throws ServiceException {
 
+        int id = video.getVideoId();
         String title = video.getTitle();
         String src   = video.getSource();
 
+        System.out.println("The add video function" + id);
         //Can't be null
-        if(title == null || src == null)
+        if(id == 0|| title == null || src == null)
         {
-            throw new ServiceException();
+            throw new ServiceException("The values aren't valid");
         }
 
         for(int i = 0; i < users.size(); i++ )
@@ -82,7 +84,7 @@ public class VideoServiceStub implements VideoService{
                 return video.getVideoId();
             }
         }
-        throw new ServiceException();
+        throw new ServiceException("The user doesn't exist");
     }
 
 }

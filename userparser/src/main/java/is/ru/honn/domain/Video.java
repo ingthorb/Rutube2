@@ -7,7 +7,7 @@ public class Video {
 
   protected int videoId;
   protected String title;
-  protected  String description;
+  protected String description;
   protected String source;
   protected String videoType;
   protected List<String> tags;
