@@ -14,7 +14,6 @@ import static org.junit.Assert.*;
  */
 public class TestUserService extends UserServiceStub{
 
-    //Yyyy-mm-dd
     UserServiceStub test = new UserServiceStub();
     User user1 = new User(1,"Laufey","Gudmundsdottir","lubbbacool@hotmail.com","lubba","1994-02-21");
     User user2 = new User(1,"Elin","Hauksdottir","elin@hotmail.com","ellacool","1994-08-01");
@@ -23,7 +22,6 @@ public class TestUserService extends UserServiceStub{
     public void setup()
     {
         //Set up the list as it should start as
-
         try{
             test.addUser(user1);
             test.addUser(user2);
@@ -74,7 +72,6 @@ public class TestUserService extends UserServiceStub{
         //Get user that exists
         User temp = test.getUser(user1.getUserId());
         assertEquals(1,temp.getUserId());
-        //sp um meira?
     }
     @Test
     public void userNotInList() {

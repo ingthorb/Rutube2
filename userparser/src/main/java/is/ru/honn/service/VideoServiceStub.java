@@ -64,23 +64,23 @@ public class VideoServiceStub implements VideoService{
      * @throws ServiceException if the user isn't found
      */
     public int addVideo(Video video, int userId) throws ServiceException {
-
         int id = video.getVideoId();
         String title = video.getTitle();
         String src   = video.getSource();
-
-        System.out.println("The add video function" + id);
         //Can't be null
         if(id == 0|| title == null || src == null)
         {
             throw new ServiceException("The values aren't valid");
         }
-
+        List<Video> templist = getVideosbyUser(userId);
+        templist.add(video);
         for(int i = 0; i < users.size(); i++ )
         {
             User tempUser = users.get(i);
-            if (tempUser.getUserId() ==  userId) {
-                tempUser.getVideos().add(video);
+            if (tempUser.getUserId() ==  userId)
+            {
+                tempUser.setVideos(templist);
+                System.out.println("Size of users"+ " " + users.size());
                 return video.getVideoId();
             }
         }
