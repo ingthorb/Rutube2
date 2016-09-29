@@ -35,7 +35,7 @@ public class UserServiceStub implements UserService{
 
         if(id == 0|| firstn == null|| lastn == null)
         {
-            throw new ServiceException();
+            throw new ServiceException("The values aren't valid");
         }
 
         //Checking if the user is already in the list
@@ -43,7 +43,7 @@ public class UserServiceStub implements UserService{
         if(tempuser != null)
         {
             //He exists
-            throw new ServiceException();
+            throw new ServiceException("The user is already in the list");
         }
 
         try
@@ -52,7 +52,7 @@ public class UserServiceStub implements UserService{
         }
         catch (Exception ex)
         {
-            throw new ServiceException();
+            throw new ServiceException("Failed to add user");
         }
         return user.getUserId();
     }
@@ -67,8 +67,8 @@ public class UserServiceStub implements UserService{
     {
         for(int i = 0; i < users.size(); i++)
         {
-            User tempuser = users.get(i)
-            if(id == tempuser.getUserId())
+            User tempuser = users.get(i);
+            if(userid == tempuser.getUserId())
             {
                 return tempuser;
             }
