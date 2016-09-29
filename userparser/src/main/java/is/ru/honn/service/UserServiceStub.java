@@ -33,7 +33,7 @@ public class UserServiceStub implements UserService{
         String firstn = user.getFirstName();
         String lastn  = user.getLastName();
 
-        if(id || firstn == null|| lastn == null)
+        if(id == 0|| firstn == null|| lastn == null)
         {
             throw new ServiceException();
         }
