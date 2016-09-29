@@ -1,7 +1,7 @@
 /**
  * Created by Laufey on 29/09/16.
  */
-/*
+
 import is.ru.honn.reader.ReadHandler;
 import is.ru.honn.reader.Reader;
 import is.ru.honn.reader.ReaderFactory;
@@ -31,6 +31,12 @@ public class TestReader implements ReadHandler
     @Before
     public void Setup()
     {
+        ReaderFactory factory = new ReaderFactory();
+        reader = factory.getReader("videoReader");
+
+        reader.setReadHandler(this);
+        reader.read();
+
     }
 
     @Test
@@ -62,4 +68,4 @@ public class TestReader implements ReadHandler
     public void read(int count, Object object) {
 
     }
-}*/
+}

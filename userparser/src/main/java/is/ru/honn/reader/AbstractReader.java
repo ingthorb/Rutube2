@@ -8,20 +8,24 @@ import java.util.List;
 /**
  * Created by Laufey on 28/09/16.
  */
-public class AbstractReader implements Reader {
+public abstract class AbstractReader implements Reader {
 
     protected String URI;
     protected ReadHandler readHandler;
+    public abstract Object parse(String content);
+
 
     @Override
-    public Object read() {
-        return null;
-    }
+    public Object read() throws ReaderException{
 
-    @Override //Á þetta fall nokkuð að vera hérna ?  en á þetta þá ekki að vera implementa REader
-    public Object parse(String content) {
-        return null;
-    }
+        if( readHandler != null )
+        {
+        ClientRequest clientRequest = new ClientRequest();
+
+        return parse(clientRequest.getRequest(URI));
+        }
+        throw new ReaderException();
+        }
 
     @Override
     public void setURI(String URI) {
@@ -33,16 +37,7 @@ public class AbstractReader implements Reader {
         this.readHandler = readHandler;
     }
 
-    public Object Read() throws ReaderException{
 
-        if( readHandler != null )
-        {
-            ClientRequest clientRequest = new ClientRequest();
-
-            return parse(clientRequest.getRequest(URI));
-        }
-        throw new ReaderException();
-    }
 
     /**
      *

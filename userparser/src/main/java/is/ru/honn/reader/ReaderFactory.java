@@ -9,7 +9,7 @@ public class ReaderFactory {
 
     Reader readerR ;
 
-    public Reader reader(String reader){
+    public Reader getReader(String reader){
         ApplicationContext ctx = new FileSystemXmlApplicationContext("classpath:reader.xml");
         readerR = (Reader)ctx.getBean(reader);
         //readerR.setReadHandler();
