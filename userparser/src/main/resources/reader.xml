@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="UserService" class="is.ru.honn.service.UserServiceStub">
+    </bean>
+    <bean id="VideoService" class="is.ru.honn.service.VideoServiceStub">
+    </bean>
+
+    <bean id="feedReader" class="is.ru.honn.tube.feeds.RssReader">
+    </bean>
+
+</beans>

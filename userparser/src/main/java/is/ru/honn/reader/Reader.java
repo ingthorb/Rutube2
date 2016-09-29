@@ -8,5 +8,4 @@ public interface Reader {
      Object parse(String content);
      void setURI(String URI);
      void setReadHandler(ReadHandler readHandler);
-
 }

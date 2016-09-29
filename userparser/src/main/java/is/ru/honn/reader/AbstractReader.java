@@ -8,7 +8,42 @@ import java.util.List;
 /**
  * Created by Laufey on 28/09/16.
  */
-public class AbstractReader {
+public class AbstractReader implements Reader {
+
+    protected String URI;
+    protected ReadHandler readHandler;
+
+    @Override
+    public Object read() {
+        return null;
+    }
+
+    @Override //Á þetta fall nokkuð að vera hérna ?  en á þetta þá ekki að vera implementa REader
+    public Object parse(String content) {
+        return null;
+    }
+
+    @Override
+    public void setURI(String URI) {
+        this.URI = URI;
+    }
+
+    @Override
+    public void setReadHandler(ReadHandler readHandler) {
+        this.readHandler = readHandler;
+    }
+
+    public Object Read() throws ReaderException{
+
+        if( readHandler != null )
+        {
+            ClientRequest clientRequest = new ClientRequest();
+
+            return parse(clientRequest.getRequest(URI));
+        }
+        throw new ReaderException();
+    }
+
     /**
      *
      * @param jParent Json parent containing an integer field.
@@ -34,5 +69,7 @@ public class AbstractReader {
         List<User> users = (List<User>)userReader.parse(content);
 
     }
+
+
 
 }
