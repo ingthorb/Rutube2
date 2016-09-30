@@ -2,17 +2,13 @@ import is.ru.honn.domain.User;
 import is.ru.honn.service.ServiceException;
 import is.ru.honn.service.VideoServiceStub;
 import is.ru.honn.domain.Video;
-import is.ru.honn.service.VideoService;
-import is.ru.honn.service.VideoServiceStub;
-
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.List;
 import static is.ru.honn.service.UserService.users;
 import static org.junit.Assert.*;
 /**
- * Created by Ingthor on 29.9.2016.
+ * TODO:Document
  */
 public class TestVideoService extends VideoServiceStub{
 

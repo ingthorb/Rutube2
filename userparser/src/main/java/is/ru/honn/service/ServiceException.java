@@ -1,7 +1,7 @@
 package is.ru.honn.service;
 
 /**
- * Created by Laufey on 28/09/16.
+ *TODO:Document
  */
 public class ServiceException extends Exception {
 

@@ -1,7 +1,6 @@
 package is.ru.honn.service;
 import is.ru.honn.domain.User;
 import is.ru.honn.domain.Video;
-import is.ru.honn.service.UserService;
 import java.util.ArrayList;
 import java.util.List;
     import static is.ru.honn.service.UserService.users;

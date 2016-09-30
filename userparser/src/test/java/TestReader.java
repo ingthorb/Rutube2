@@ -1,7 +1,7 @@
 /**
- * Created by Laufey on 29/09/16.
+ *TODO:Document
  */
-
+/*
 import is.ru.honn.reader.ReadHandler;
 import is.ru.honn.reader.Reader;
 import is.ru.honn.reader.ReaderException;
@@ -73,4 +73,4 @@ public class TestReader implements ReadHandler
     public void read(int count, Object object) {
 
     }
-}
+}*/

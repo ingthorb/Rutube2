@@ -3,7 +3,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 /**
- * Created by Laufey on 28/09/16.
+ * TODO:Document
  */
 public class ReaderFactory {
 
