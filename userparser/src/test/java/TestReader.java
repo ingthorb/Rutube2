@@ -1,9 +1,10 @@
 /**
  * Created by Laufey on 29/09/16.
  */
-/*
+
 import is.ru.honn.reader.ReadHandler;
 import is.ru.honn.reader.Reader;
+import is.ru.honn.reader.ReaderException;
 import is.ru.honn.reader.ReaderFactory;
 import junit.framework.TestCase;
 import org.junit.Before;
@@ -18,7 +19,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 public class TestReader implements ReadHandler
 {
-   // Logger log = Logger.getLogger(TestPlayerService.class.getName());
+    // Logger log = Logger.getLogger(TestPlayerService.class.getName());
 
 
     @Autowired
@@ -35,7 +36,11 @@ public class TestReader implements ReadHandler
         reader = factory.getReader("videoReader");
 
         reader.setReadHandler(this);
-        reader.read();
+        try {
+            reader.read();
+        } catch (ReaderException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -68,4 +73,4 @@ public class TestReader implements ReadHandler
     public void read(int count, Object object) {
 
     }
-}*/
+}
