@@ -10,14 +10,20 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 /**
- * TODO:Document
+ * Test class for the UserService
  */
 public class TestUserService extends UserServiceStub{
 
+    /**
+     * Initialize the UserServiceStub and Users
+     */
     UserServiceStub test = new UserServiceStub();
     User user1 = new User(1,"Laufey","Gudmundsdottir","lubbbacool@hotmail.com","lubba","1994-02-21");
     User user2 = new User(1,"Elin","Hauksdottir","elin@hotmail.com","ellacool","1994-08-01");
 
+    /**
+     * Before each test we don't want to have the list empty so we add to the list
+     */
     @Before
     public void setup()
     {
@@ -32,6 +38,10 @@ public class TestUserService extends UserServiceStub{
         }
     }
 
+    /**
+     * Test to see if the user is added successfully to the list
+     * Should return the Id,FirstName and LastName
+     */
     @Test
     public void testAddUser()
     {
@@ -49,9 +59,13 @@ public class TestUserService extends UserServiceStub{
         assertEquals(3, users.get(1).getUserId());
         assertEquals("Bob", users.get(1).getFirstName());
         assertEquals("Billy", users.get(1).getLastName());
-
     }
 
+    /**
+     * Test to see what happens when adding the user fails
+     * With for example the values aren't valid
+     * Should return ServiceException
+     */
     @Test
     public void testAddUserFail()
     {
@@ -66,6 +80,10 @@ public class TestUserService extends UserServiceStub{
         }
     }
 
+    /**
+     * Test to see if the User is already in the list
+     *  Should return the correct UserId
+     */
     @Test
     public void userAlreadyInList()
     {
@@ -73,6 +91,11 @@ public class TestUserService extends UserServiceStub{
         User temp = test.getUser(user1.getUserId());
         assertEquals(1,temp.getUserId());
     }
+
+    /**
+     * Test to see what happens when the user doesn't exist
+     * Should return null
+     */
     @Test
     public void userNotInList() {
         //Get user that doesn't exists

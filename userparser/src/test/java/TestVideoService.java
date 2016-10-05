@@ -8,12 +8,14 @@ import org.junit.Test;
 import static is.ru.honn.service.UserService.users;
 import static org.junit.Assert.*;
 /**
- * TODO:Document
+ * Class to test the VideoService and VideoServiceStub
  */
 public class TestVideoService extends VideoServiceStub{
 
     VideoServiceStub test = new VideoServiceStub();
-
+    /**
+     *  Add the user into the list so it isn't empty
+     */
     @Before
     public void Setup()
     {
@@ -21,6 +23,10 @@ public class TestVideoService extends VideoServiceStub{
         users.add(user);
     }
 
+    /**
+     * Add to see if the user can sucessfully add a video
+     * Then test to see if the Id,Title and Source are correct
+     */
     @Test
     public void addVideo()
     {
@@ -39,6 +45,11 @@ public class TestVideoService extends VideoServiceStub{
         assertEquals("lol", temp.getTitle());
         assertEquals("youtube.com",temp.getSource());
     }
+
+    /**
+     * Test to see what happens when adding a video fials
+     * Returns a ServiceException
+     */
     @Test
     public void addVideoFail()
     {
@@ -52,6 +63,11 @@ public class TestVideoService extends VideoServiceStub{
             assertEquals("The values aren't valid",ex.getMessage());
         }
     }
+
+    /**
+     * Test to see if getting a video that doesn't exist fails
+     * Should return null
+     */
     @Test
     public void getVideo()
     {

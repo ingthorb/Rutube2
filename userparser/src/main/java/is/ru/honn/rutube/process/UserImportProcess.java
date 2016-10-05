@@ -28,7 +28,7 @@ public class UserImportProcess extends RuAbstractProcess implements ReadHandler 
     MessageSource msg;
 
     /**
-     *
+     * ?
      */
     @Override
     public void beforeProcess() {
@@ -59,6 +59,7 @@ public class UserImportProcess extends RuAbstractProcess implements ReadHandler 
 
     /**
      * Sets the URI to read from and reads
+     * Also logs the message
      */
     @Override
     public void startProcess() {
@@ -77,7 +78,7 @@ public class UserImportProcess extends RuAbstractProcess implements ReadHandler 
     }
 
     /**
-     * Prints out the users
+     * Prints out the users and logs in both Icelandic and English
      */
     @Override
     public void afterProcess() {
@@ -92,7 +93,7 @@ public class UserImportProcess extends RuAbstractProcess implements ReadHandler 
 
     /**
      * Funtion that takes one object, converts it to User and adds the User
-     * @param count ???
+     * @param count
      * @param object object that keeps the user data
      */
     @Override

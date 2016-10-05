@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *TODO:Document
+ * Initializes the User and is implemented in UserServiceStub
  */
 public interface UserService
 {

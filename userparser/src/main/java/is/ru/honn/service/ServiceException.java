@@ -1,7 +1,7 @@
 package is.ru.honn.service;
 
 /**
- *TODO:Document
+ * Exception cast if there is a error in Service
  */
 public class ServiceException extends Exception {
 

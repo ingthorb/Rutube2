@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Enables the user to get the list of users and
- * add a user
+ * add a user, implements the UserService functions
  */
 public class UserServiceStub implements UserService{
 

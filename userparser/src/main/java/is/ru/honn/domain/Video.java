@@ -2,7 +2,9 @@ package is.ru.honn.domain;
 
 import java.util.List;
 
-
+/**
+ * Class for each Video that the user has
+ */
 public class Video {
 
   protected int videoId;
@@ -12,6 +14,15 @@ public class Video {
   protected String videoType;
   protected List<String> tags;
 
+  /**
+   *  Constructor for Video and initializes the variables
+   * @param videoId
+   * @param title
+   * @param description
+   * @param source
+   * @param videoType
+   * @param tags
+   */
   public Video(int videoId, String title, String description, String source, String videoType, List<String> tags) {
     this.videoId = videoId;
     this.title = title;
@@ -20,6 +31,13 @@ public class Video {
     this.videoType = videoType;
     this.tags = tags;
   }
+
+
+  /**
+   *
+   * Getter and setters of the variables that Video has
+   *
+   */
 
   public int getVideoId() {
     return videoId;

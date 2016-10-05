@@ -5,7 +5,7 @@ import is.ru.honn.domain.Video;
 import java.util.List;
 
 /**
- *TODO:Document
+ * Is implemented by VideoServiceStub
  */
 public interface VideoService
 {
