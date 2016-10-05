@@ -1,5 +1,6 @@
 package is.ru.honn.service;
 
+import is.ru.honn.observer.ObserverAbstract;
 import is.ru.honn.domain.User;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,8 +8,10 @@ import java.util.List;
 /**
  * Enables the user to get the list of users and
  * add a user, implements the UserService functions
+ * Extends UserAbstract so that we can use the Notify function in
+ * the UserAbstract class
  */
-public class UserServiceStub implements UserService{
+public class UserServiceStub extends ObserverAbstract {
 
     private static List<User> users = new ArrayList<User>();
 
@@ -54,7 +57,10 @@ public class UserServiceStub implements UserService{
         {
             throw new ServiceException("Failed to add user");
         }
+        //Notify every observer
+        NotifyUsers(user);
         return user.getUserId();
+
     }
 
     /**

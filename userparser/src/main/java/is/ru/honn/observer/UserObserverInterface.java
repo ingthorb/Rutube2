@@ -1,9 +1,5 @@
-package is.ru.honn.service;
-
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Observer;
+package is.ru.honn.observer;
+import is.ru.honn.domain.User;
 
 
 /**
@@ -13,5 +9,5 @@ public interface UserObserverInterface {
 
     public void AddObserver(Observer ob);
     public void DeleteObserver(Observer ob);
-    public void NotifyUsers();
+    public void NotifyUsers(User user);
 }
