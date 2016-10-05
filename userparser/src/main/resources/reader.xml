@@ -4,10 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean id="userReader" class="is.ru.honn.reader.UserReader">
+    <bean id="reader" class="is.ru.honn.reader.ReaderFactory">
     </bean>
-    <bean id="UserService" class="is.ru.honn.service.UserServiceStub">
+    <bean id="UserReader" class="is.ru.honn.reader.UserReader">
+        <constructor-arg ref="videoReader"></constructor-arg>
     </bean>
-    <bean id="VideoService" class="is.ru.honn.service.VideoServiceStub">
+    <bean id="videoReader" class="is.ru.honn.reader.VideoReader">
     </bean>
 </beans>

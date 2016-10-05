@@ -11,8 +11,7 @@ public class ReaderFactory {
 
     public Reader getReader(String reader){
         ApplicationContext ctx = new FileSystemXmlApplicationContext("classpath:reader.xml");
-        readerR = (Reader)ctx.getBean(reader);
-        //readerR.setReadHandler();
-        return readerR;
+       // readerR = (Reader)ctx.getBean(reader);
+        return (Reader)ctx.getBean(reader);
     }
 }

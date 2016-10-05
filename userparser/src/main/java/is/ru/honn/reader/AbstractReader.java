@@ -3,32 +3,49 @@ package is.ru.honn.reader;
 import is.ru.honn.domain.User;
 import org.json.simple.JSONObject;
 
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.List;
+import org.apache.commons.validator.routines.UrlValidator;
 
 /**
  * Created by Laufey on 28/09/16.
  */
 public abstract class AbstractReader implements Reader {
 
-    protected String URI;
-    protected ReadHandler readHandler;
+    private String URI;
+    private ReadHandler readHandler;
     public abstract Object parse(String content);
 
+    public static void main(String args[]){
+
+        VideoReader videoReader = new VideoReader();
+        UserReader userReader = new UserReader(videoReader);
+        ClientRequest clientRequest = new ClientRequest();
+        String content = clientRequest.getRequest("http://mockaroo.com/f13b8200/download?count=1&key=e79a3650");
+        List<User> users = (List<User>)userReader.parse(content);
+    }
 
     @Override
     public Object read() throws ReaderException{
 
         if( readHandler != null )
         {
-        ClientRequest clientRequest = new ClientRequest();
+            ClientRequest clientRequest = new ClientRequest();
 
-        return parse(clientRequest.getRequest(URI));
+            UrlValidator  url = new UrlValidator();
+            if(!url.isValid(URI)){
+                throw new ReaderException();
+            }
+//Kalla á read hitt fallið 
+            return parse(clientRequest.getRequest(URI));
         }
         throw new ReaderException();
-        }
+    }
 
     @Override
     public void setURI(String URI) {
+
         this.URI = URI;
     }
 
@@ -36,8 +53,6 @@ public abstract class AbstractReader implements Reader {
     public void setReadHandler(ReadHandler readHandler) {
         this.readHandler = readHandler;
     }
-
-
 
     /**
      *
@@ -54,17 +69,4 @@ public abstract class AbstractReader implements Reader {
             return 0;
         return value.intValue();
     }
-
-    public static void main(String args[]){
-
-        VideoReader videoReader = new VideoReader();
-        UserReader userReader = new UserReader(videoReader);
-        ClientRequest clientRequest = new ClientRequest();
-        String content = clientRequest.getRequest("http://mockaroo.com/f13b8200/download?count=1&key=e79a3650");
-        List<User> users = (List<User>)userReader.parse(content);
-
-    }
-
-
-
 }
